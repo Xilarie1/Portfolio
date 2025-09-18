@@ -1,0 +1,262 @@
+/* === Reset & Variables === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-green: #00ff99;
+  --color-black: #060f11;
+  --color-offblack: #111;
+  --color-offwhite: #ddd;
+  --font-main: "Work Sans", sans-serif;
+  --font-secondary: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+/* === Global Styles === */
+body {
+  font-family: var(--font-main);
+  background: var(--color-black);
+  color: var(--color-offwhite);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary);
+  color: var(--color-offwhite);
+}
+
+button {
+  font-family: var(--font-mono);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* === Navbar === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 333px;
+  height: 59px;
+  background: var(--color-offblack);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--color-offwhite);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: var(--color-green);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-offwhite);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+/* === Layout === */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 292px 610px 1fr;
+  gap: 40px;
+  max-width: 1920px;
+  margin: 80px auto 0;
+  padding: 0 40px;
+}
+
+/* === Profile Card === */
+.profile-card {
+  grid-column: 2;
+  background: var(--color-offblack);
+  border-radius: 8px;
+  padding: 20px;
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  height: 545px; /* fixed height */
+}
+
+.profile-card img#profilepic {
+  width: 100%;
+  max-width: 203px;
+  max-height: 227px;
+  border-radius: 10px;
+}
+
+.profile-card h2,
+.profile-card p {
+  margin-bottom: 0.5rem;
+}
+
+/* === Button Row === */
+.buttonrow {
+  display: flex;
+  justify-content: space-between;
+  width: 136px; /* total width: 60 + 60 + 16px gap */
+  height: 34px; /* fixed height */
+  gap: 16px; /* gap between buttons */
+}
+
+.secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* fixed width */
+  height: 34px; /* fixed height */
+  padding: 0 4px;
+  gap: 4px; /* spacing between icon and text */
+  font-size: 0.8rem;
+  background-color: #444; /* secondary button color */
+  color: #fff;
+  border-radius: 5px;
+}
+
+.secondary-button:hover {
+  transform: scale(1.05);
+}
+
+#github img.smallicon {
+  width: 26px;
+  height: 24px;
+}
+
+#cv img.smallicon {
+  width: 24px;
+  height: 24px;
+}
+
+/* === Kontakt Button === */
+#kontakt {
+  width: 136px; /* match total width of button row */
+  height: 34px;
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  background-color: var(--color-green);
+  color: var(--color-black);
+}
+
+/* === Icon Bar === */
+#icon-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 247px;
+  height: 68px;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* === Content Sections === */
+.section,
+.project,
+.tool,
+form {
+  background: var(--color-black); /* same as page */
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--color-offwhite);
+}
+
+.project,
+.tool {
+  text-align: center;
+}
+
+/* === Projects & Tools Grids === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tools {
+  display: flex;
+  gap: 1rem;
+}
+
+/* === Contact Form === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+}
+
+/* === Responsive === */
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .profile-card {
+    display: none;
+  }
+
+  .navbar {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}

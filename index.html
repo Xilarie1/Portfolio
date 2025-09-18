@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Martin Krogh Portfolio</title>
+    <title>Portfolio - Martin</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="hamburger">☰</button>
+      <ul>
+        <li><a href="#about">Om meg</a></li>
+        <li><a href="#projects">Prosjekter</a></li>
+        <li><a href="#tools">Verktøy</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <!-- Grid Layout -->
+    <div class="layout">
+      <!-- Profile Card (desktop only) -->
+      <aside class="profile-card">
+        <img src="Assets/stickmantemp.webp" alt="Martin" id="profilepic" />
+        <h2>Martin</h2>
+        <p>Web utvikler</p>
+        <div class="buttonrow">
+          <button id="github" class="secondary-button">
+            <img src="Assets/github.svg" alt="github icon" class="smallicon" />
+          </button>
+          <button id="cv" class="secondary-button">
+            <img
+              src="Assets/download.svg"
+              alt="download cv"
+              class="smallicon"
+            />
+            CV
+          </button>
+        </div>
+        <button id="kontakt">Kontakt</button>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <section id="about" class="section">
+          <h1>Hei, jeg heter <span class="highlight">Martin</span></h1>
+          <p>
+            Jeg bygger enkle, rene nettsider ved hjelp av <b>HTML</b>,
+            <b>CSS</b> og <b>JavaScript</b>.
+          </p>
+        </section>
+        <section section id="icon-bar">
+          <img src="assets/html.svg" alt="Icon 1" class="icon" />
+          <img src="assets/css.svg" alt="Icon 2" class="icon" />
+          <img src="assets/javascript.svg" alt="Icon 3" class="icon" />
+          <img src="assets/figma.svg" alt="Icon 4" class="icon" />
+          <img src="assets/react.svg" alt="Icon 5" class="icon" />
+          <img src="assets/github.svg" alt="Icon 6" class="icon" />
+        </section>
+        <section class="info">
+          <p>
+            Jeg har brukt datamaskiner mesteparten av livet mitt, og den
+            nysgjerrigheten førte meg til webutvikling. Jeg liker å lage
+            responsive layouter, jobbe med kode og finne ut hvordan ting
+            fungerer.
+          </p>
+          <p>
+            Utenom koding elsker jeg å bygge PC-er, tilpasse tastaturer og holde
+            meg oppdatert på teknologi, sport og spilling. Jeg liker
+            kontinuerlig progresjon og læring innenfor det jeg holder på med, og
+            koding har alltid en utfordring på lur som holder interessen gående
+          </p>
+           
+        </section>
+
+        <section id="projects" class="section">
+          <h2>Nylige <span class="highlight">Prosjekter</span></h2>
+          <div class="grid">
+            <div class="project">Prosjekt 1</div>
+            <div class="project">Prosjekt 2</div>
+            <div class="project">Prosjekt 3</div>
+            <div class="project">Prosjekt 4</div>
+          </div>
+        </section>
+
+        <section id="tools" class="section">
+          <h2>Dev <span class="highlight">Verktøy</span></h2>
+          <div class="tools">
+            <div class="tool">HTML</div>
+            <div class="tool">CSS</div>
+            <div class="tool">JS</div>
+            <div class="tool">React</div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <h2>Kom i <span class="highlight">kontakt</span></h2>
+          <form>
+            <input type="text" placeholder="Navn" />
+            <input type="email" placeholder="E-post" />
+            <textarea placeholder="Din melding"></textarea>
+            <button type="submit">Send inn</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
