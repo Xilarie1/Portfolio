@@ -8,8 +8,9 @@
 :root {
   --color-green: #00ff99;
   --color-black: #060f11;
-  --color-offblack: #111;
-  --color-offwhite: #ddd;
+  --color-offblack: #1c2225;
+  --color-offwhite: #d7d8d9;
+  --color-grey: #989d9e;
   --font-main: "Work Sans", sans-serif;
   --font-secondary: "IBM Plex Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
@@ -27,6 +28,7 @@ h2,
 h3 {
   font-family: var(--font-secondary);
   color: var(--color-offwhite);
+  padding: 20px 0px;
 }
 
 button {
@@ -43,35 +45,52 @@ button:hover {
 }
 
 /* === Navbar === */
-.navbar {
+/* Navbar container */
+.icon-navbar {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 333px;
   height: 59px;
-  background: var(--color-offblack);
+  background: #1a1a1a;
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
   border-radius: 8px;
   z-index: 1000;
 }
 
-.navbar ul {
+/* Each nav item */
+.nav-item {
+  width: 45px;
+  height: 37px;
   display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-.navbar a {
+  flex-direction: column; /* stack icon + text */
+  align-items: center;
+  justify-content: center;
   color: var(--color-offwhite);
   text-decoration: none;
-  font-weight: bold;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
-.navbar a:hover {
+/* Default icon style */
+.nav-item svg {
+  stroke: currentColor;
+  margin-bottom: 3px;
+}
+
+/* Hover state */
+.nav-item:hover {
   color: var(--color-green);
+}
+
+/* Active/selected */
+.nav-item.active {
+  background: var(--color-green);
+  color: var(--color-offblack);
 }
 
 .hamburger {
@@ -141,8 +160,8 @@ button:hover {
   padding: 0 4px;
   gap: 4px; /* spacing between icon and text */
   font-size: 0.8rem;
-  background-color: #444; /* secondary button color */
-  color: #fff;
+  background-color: var(--color-grey); /* secondary button color */
+  color: var(--color-black);
   border-radius: 5px;
 }
 
@@ -169,6 +188,10 @@ button:hover {
   text-align: center;
   background-color: var(--color-green);
   color: var(--color-black);
+}
+
+.highlight {
+  color: var(--color-green);
 }
 
 /* === Icon Bar === */
@@ -202,21 +225,55 @@ form {
   color: var(--color-offwhite);
 }
 
-.project,
-.tool {
-  text-align: center;
+.tools {
+  margin: 2rem auto;
+  max-width: 650px; /* keep grid centered */
 }
 
-/* === Projects & Tools Grids === */
-.grid {
+.tools-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-.tools {
+/* Individual tool box */
+.tool {
+  width: 302.5px;
+  height: 97px;
+  background: var(--color-offblack);
+  border-radius: 8px;
+  padding: 0.75rem;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-offwhite);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tool-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* 📱 Mobile: stack into 1 column */
+@media (max-width: 700px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  .tool {
+    width: 100%;
+    max-width: 302.5px; /* keeps same feel but centers */
+    margin: 0 auto;
+  }
 }
 
 /* === Contact Form === */
@@ -233,6 +290,86 @@ textarea {
   border-radius: 5px;
   background: #222;
   color: #fff;
+}
+
+.projects {
+  margin: 2rem auto;
+  max-width: 650px; /* keeps it centered and not too wide */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cards (same as before) */
+.project-card {
+  width: 303px;
+  height: 302px;
+  background: var(--color-offblack);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0 auto; /* centers if grid column is wider */
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.project-links a {
+  color: #ddd;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-links a:hover {
+  color: #00ff99;
+}
+
+/* 📱 Mobile: stack to 1 column */
+@media (max-width: 700px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* === Responsive === */

@@ -7,42 +7,77 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <button class="hamburger">☰</button>
-      <ul>
-        <li><a href="#about">Om meg</a></li>
-        <li><a href="#projects">Prosjekter</a></li>
-        <li><a href="#tools">Verktøy</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </nav>
+    <!-- Header with navbar -->
+    <header>
+      <nav class="icon-navbar">
+        <a href="#home" class="nav-item active">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Hjem</span>
+        </a>
+
+        <a href="#about" class="nav-item">
+          <svg><!-- person icon --></svg>
+          <span>Om meg</span>
+        </a>
+
+        <a href="#projects" class="nav-item">
+          <svg><!-- folder icon --></svg>
+          <span>Prosjekter</span>
+        </a>
+
+        <a href="#contact" class="nav-item">
+          <svg><!-- mail icon --></svg>
+          <span>Kontakt</span>
+        </a>
+
+        <a href="#tools" class="nav-item">
+          <svg><!-- wrench icon --></svg>
+          <span>Verktøy</span>
+        </a>
+      </nav>
+    </header>
 
     <!-- Grid Layout -->
     <div class="layout">
       <!-- Profile Card (desktop only) -->
       <aside class="profile-card">
-        <img src="Assets/stickmantemp.webp" alt="Martin" id="profilepic" />
+        <img src="assets/stickmantemp.webp" alt="Martin" id="profilepic" />
         <h2>Martin</h2>
         <p>Web utvikler</p>
+
         <div class="buttonrow">
           <button id="github" class="secondary-button">
-            <img src="Assets/github.svg" alt="github icon" class="smallicon" />
+            <img src="assets/github.svg" alt="github icon" class="smallicon" />
           </button>
           <button id="cv" class="secondary-button">
             <img
-              src="Assets/download.svg"
+              src="assets/download.svg"
               alt="download cv"
               class="smallicon"
             />
             CV
           </button>
         </div>
+
         <button id="kontakt">Kontakt</button>
       </aside>
 
       <!-- Main Content -->
       <main class="content">
+        <!-- About -->
         <section id="about" class="section">
           <h1>Hei, jeg heter <span class="highlight">Martin</span></h1>
           <p>
@@ -50,14 +85,18 @@
             <b>CSS</b> og <b>JavaScript</b>.
           </p>
         </section>
-        <section section id="icon-bar">
-          <img src="assets/html.svg" alt="Icon 1" class="icon" />
-          <img src="assets/css.svg" alt="Icon 2" class="icon" />
-          <img src="assets/javascript.svg" alt="Icon 3" class="icon" />
-          <img src="assets/figma.svg" alt="Icon 4" class="icon" />
-          <img src="assets/react.svg" alt="Icon 5" class="icon" />
-          <img src="assets/github.svg" alt="Icon 6" class="icon" />
+
+        <!-- Icon bar -->
+        <section id="icon-bar">
+          <img src="assets/html.svg" alt="HTML" class="icon" />
+          <img src="assets/css.svg" alt="CSS" class="icon" />
+          <img src="assets/javascript.svg" alt="JavaScript" class="icon" />
+          <img src="assets/figma.svg" alt="Figma" class="icon" />
+          <img src="assets/react.svg" alt="React" class="icon" />
+          <img src="assets/github.svg" alt="GitHub" class="icon" />
         </section>
+
+        <!-- Info -->
         <section class="info">
           <p>
             Jeg har brukt datamaskiner mesteparten av livet mitt, og den
@@ -69,31 +108,129 @@
             Utenom koding elsker jeg å bygge PC-er, tilpasse tastaturer og holde
             meg oppdatert på teknologi, sport og spilling. Jeg liker
             kontinuerlig progresjon og læring innenfor det jeg holder på med, og
-            koding har alltid en utfordring på lur som holder interessen gående
+            koding har alltid en utfordring på lur som holder interessen gående.
           </p>
-           
         </section>
 
-        <section id="projects" class="section">
+        <!-- Projects -->
+        <section class="projects">
           <h2>Nylige <span class="highlight">Prosjekter</span></h2>
-          <div class="grid">
-            <div class="project">Prosjekt 1</div>
-            <div class="project">Prosjekt 2</div>
-            <div class="project">Prosjekt 3</div>
-            <div class="project">Prosjekt 4</div>
+          <div class="project-grid">
+            <div class="project-card">
+              <img
+                src="Assets/codetemp.webp"
+                alt="Project 1"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Project 1</h3>
+                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <div class="project-links">
+                  <a href="#">Repo</a>
+                  <a href="#">Live</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="Assets/codetemp.webp"
+                alt="Project 2"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Project 2</h3>
+                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <div class="project-links">
+                  <a href="#">Repo</a>
+                  <a href="#">Live</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="Assets/codetemp.webp"
+                alt="Project 3"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Project 3</h3>
+                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <div class="project-links">
+                  <a href="#">Repo</a>
+                  <a href="#">Live</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="Assets/codetemp.webp"
+                alt="Project 4"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Project 4</h3>
+                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <div class="project-links">
+                  <a href="#">Repo</a>
+                  <a href="#">Live</a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="tools" class="section">
-          <h2>Dev <span class="highlight">Verktøy</span></h2>
-          <div class="tools">
-            <div class="tool">HTML</div>
-            <div class="tool">CSS</div>
-            <div class="tool">JS</div>
-            <div class="tool">React</div>
+        <!-- Tools -->
+        <section class="tools">
+          <h2>Dev Verktøy</h2>
+          <div class="tools-grid">
+            <div class="tool">
+              <img
+                src="assets/javascript.svg"
+                alt="JavaScript"
+                class="tool-icon"
+              />
+              <p>
+                <b>Javascript:</b> The behavior of a webpage. It makes things
+                interactive…
+              </p>
+            </div>
+            <div class="tool">
+              <img src="assets/css.svg" alt="CSS" class="tool-icon" />
+              <p>
+                <b>CSS:</b> The design of a webpage. It controls colors,
+                layouts, fonts…
+              </p>
+            </div>
+            <div class="tool">
+              <img src="assets/html.svg" alt="HTML" class="tool-icon" />
+              <p><b>HTML:</b> The structure of a webpage…</p>
+            </div>
+            <div class="tool">
+              <img src="assets/figma.svg" alt="Figma" class="tool-icon" />
+              <p>
+                <b>Figma:</b> A design tool used to create and share website
+                designs…
+              </p>
+            </div>
+            <div class="tool">
+              <img src="assets/github.svg" alt="GitHub" class="tool-icon" />
+              <p>
+                <b>GitHub:</b> A platform to store, share, and work together…
+              </p>
+            </div>
+            <div class="tool">
+              <img src="assets/react.svg" alt="React" class="tool-icon" />
+              <p>
+                <b>React:</b> A JavaScript library for building user interfaces…
+              </p>
+            </div>
           </div>
         </section>
 
+        <!-- Contact -->
         <section id="contact" class="section">
           <h2>Kom i <span class="highlight">kontakt</span></h2>
           <form>
