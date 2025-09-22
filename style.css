@@ -28,7 +28,7 @@ h2,
 h3 {
   font-family: var(--font-secondary);
   color: var(--color-offwhite);
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 button {
@@ -44,29 +44,38 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* === Navbar === */
-/* Navbar container */
-.icon-navbar {
+/* === Header === */
+header {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
+  min-height: 178px;
+  background-color: var(--color-black);
+  z-index: 900;
+}
+
+/* === Navbar === */
+.icon-navbar {
+  position: absolute; /* relative to header */
+  top: 50%; /* vertical center of header */
+  left: 50%; /* horizontal center */
+  transform: translate(-50%, -50%); /* center perfectly */
   height: 59px;
   background: #1a1a1a;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 0 1rem;
+  padding: 1rem;
   border-radius: 8px;
   z-index: 1000;
 }
 
-/* Each nav item */
 .nav-item {
   width: 45px;
   height: 37px;
   display: flex;
-  flex-direction: column; /* stack icon + text */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: var(--color-offwhite);
@@ -76,21 +85,13 @@ button:hover {
   transition: all 0.2s ease;
 }
 
-/* Default icon style */
 .nav-item svg {
   stroke: currentColor;
   margin-bottom: 3px;
 }
 
-/* Hover state */
 .nav-item:hover {
   color: var(--color-green);
-}
-
-/* Active/selected */
-.nav-item.active {
-  background: var(--color-green);
-  color: var(--color-offblack);
 }
 
 .hamburger {
@@ -106,10 +107,11 @@ button:hover {
 /* === Layout === */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 292px 610px 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 292px 610px 1fr; /* profile + main content */
+  column-gap: 120px; /* space between profile card and main content */
+  row-gap: 40px; /* spacing between rows */
   max-width: 1920px;
-  margin: 80px auto 0;
+  margin: 178px auto 0; /* top margin = header height, auto left/right centers it */
   padding: 0 40px;
 }
 
@@ -120,14 +122,14 @@ button:hover {
   border-radius: 8px;
   padding: 20px;
   position: sticky;
-  top: 100px;
+  top: 178px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   text-align: center;
-  height: 545px; /* fixed height */
+  height: 545px;
 }
 
 .profile-card img#profilepic {
@@ -146,21 +148,21 @@ button:hover {
 .buttonrow {
   display: flex;
   justify-content: space-between;
-  width: 136px; /* total width: 60 + 60 + 16px gap */
-  height: 34px; /* fixed height */
-  gap: 16px; /* gap between buttons */
+  width: 136px;
+  height: 34px;
+  gap: 16px;
 }
 
 .secondary-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px; /* fixed width */
-  height: 34px; /* fixed height */
+  width: 60px;
+  height: 34px;
   padding: 0 4px;
-  gap: 4px; /* spacing between icon and text */
+  gap: 4px;
   font-size: 0.8rem;
-  background-color: var(--color-grey); /* secondary button color */
+  background-color: var(--color-grey);
   color: var(--color-black);
   border-radius: 5px;
 }
@@ -179,9 +181,8 @@ button:hover {
   height: 24px;
 }
 
-/* === Kontakt Button === */
 #kontakt {
-  width: 136px; /* match total width of button row */
+  width: 136px;
   height: 34px;
   display: block;
   margin-top: 1rem;
@@ -219,7 +220,7 @@ button:hover {
 .project,
 .tool,
 form {
-  background: var(--color-black); /* same as page */
+  background: var(--color-black);
   border-radius: 10px;
   padding: 2rem;
   color: var(--color-offwhite);
@@ -227,7 +228,7 @@ form {
 
 .tools {
   margin: 2rem auto;
-  max-width: 650px; /* keep grid centered */
+  max-width: 650px;
 }
 
 .tools-grid {
@@ -236,7 +237,6 @@ form {
   gap: 1rem;
 }
 
-/* Individual tool box */
 .tool {
   width: 302.5px;
   height: 97px;
@@ -264,19 +264,19 @@ form {
   flex-shrink: 0;
 }
 
-/* 📱 Mobile: stack into 1 column */
+/* Mobile Tools */
 @media (max-width: 700px) {
   .tools-grid {
     grid-template-columns: 1fr;
   }
   .tool {
     width: 100%;
-    max-width: 302.5px; /* keeps same feel but centers */
+    max-width: 302.5px;
     margin: 0 auto;
   }
 }
 
-/* === Contact Form === */
+/* Contact Form */
 form {
   display: flex;
   flex-direction: column;
@@ -294,7 +294,7 @@ textarea {
 
 .projects {
   margin: 2rem auto;
-  max-width: 650px; /* keeps it centered and not too wide */
+  max-width: 650px;
 }
 
 .project-grid {
@@ -303,7 +303,6 @@ textarea {
   gap: 1.5rem;
 }
 
-/* Cards (same as before) */
 .project-card {
   width: 303px;
   height: 302px;
@@ -314,7 +313,7 @@ textarea {
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin: 0 auto; /* centers if grid column is wider */
+  margin: 0 auto;
 }
 
 .project-card:hover {
@@ -365,18 +364,19 @@ textarea {
   color: #00ff99;
 }
 
-/* 📱 Mobile: stack to 1 column */
+/* Mobile Projects */
 @media (max-width: 700px) {
   .project-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* === Responsive === */
+/* Responsive Layout */
 @media (max-width: 1000px) {
   .layout {
     grid-template-columns: 1fr;
     padding: 0 20px;
+    margin-top: 238px; /* header + navbar height */
   }
 
   .profile-card {
