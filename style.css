@@ -202,7 +202,6 @@ header {
   align-items: center;
   width: 247px;
   height: 68px;
-  margin: 0 auto;
 }
 
 .icon {
@@ -213,17 +212,6 @@ header {
 
 .icon:hover {
   transform: scale(1.2);
-}
-
-/* === Content Sections === */
-.section,
-.project,
-.tool,
-form {
-  background: var(--color-black);
-  border-radius: 10px;
-  padding: 2rem;
-  color: var(--color-offwhite);
 }
 
 .tools {
