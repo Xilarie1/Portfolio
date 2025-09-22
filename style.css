@@ -385,3 +385,6 @@ textarea {
     display: none;
   }
 }
+section {
+  scroll-margin-top: 178px; /* equal to your navbar height */
+}
