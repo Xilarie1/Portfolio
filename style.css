@@ -28,7 +28,7 @@ h2,
 h3 {
   font-family: var(--font-secondary);
   color: var(--color-offwhite);
-  padding: 20px 0;
+  padding: 0px 0px 20px 0px;
 }
 
 button {
@@ -62,7 +62,7 @@ header {
   left: 50%; /* horizontal center */
   transform: translate(-50%, -50%); /* center perfectly */
   height: 59px;
-  background: #1a1a1a;
+  background: var(--color-offblack);
   display: flex;
   align-items: center;
   gap: 1.5rem;
