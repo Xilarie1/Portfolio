@@ -84,6 +84,16 @@ header {
   border-radius: 6px;
   transition: all 0.2s ease;
 }
+/* Active nav item */
+.nav-item.active {
+  background: var(--color-green);
+  color: var(--color-black); /* text + SVGs switch automatically */
+}
+
+.nav-item.active:hover {
+  background: var(--color-green);
+  color: var(--color-offwhite);
+}
 
 .nav-item svg {
   stroke: currentColor;
