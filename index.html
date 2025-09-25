@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Martin</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <!-- Header with navbar -->
@@ -129,7 +129,7 @@
         </section>
 
         <!-- Icon bar -->
-        <section id="icon-bar">
+        <section id="icon-bar" class="section">
           <img src="Assets/htmlwhite.svg" alt="HTML" class="icon" />
           <img src="Assets/css.svg" alt="CSS" class="icon" />
           <img src="Assets/javascript.svg" alt="JavaScript" class="icon" />
@@ -139,23 +139,30 @@
         </section>
 
         <!-- Info -->
-        <section class="info">
+        <section class="info section">
           <p>
             Jeg har brukt datamaskiner mesteparten av livet mitt, og den
             nysgjerrigheten førte meg til webutvikling. Jeg liker å lage
             responsive layouter, jobbe med kode og finne ut hvordan ting
             fungerer.
           </p>
+          <br />
           <p>
             Utenom koding elsker jeg å bygge PC-er, tilpasse tastaturer og holde
             meg oppdatert på teknologi, sport og spilling. Jeg liker
             kontinuerlig progresjon og læring innenfor det jeg holder på med, og
             koding har alltid en utfordring på lur som holder interessen gående.
           </p>
+          <br />
+          <p>
+            Jeg har også tatt sertifisering i azure, microsoft 365 og itil,
+            AZ900, MS900 og ITILv4. Synes det er spennende med nettverk og sky
+            innen IT
+          </p>
         </section>
 
         <!-- Projects -->
-        <section class="projects" id="projects">
+        <section class="projects section" id="projects">
           <h2>Nylige <span class="highlight">Prosjekter</span></h2>
           <div class="project-grid">
             <div class="project-card">
@@ -165,13 +172,17 @@
                 class="project-img"
               />
               <div class="project-content">
-                <h3 class="project-title">Project 1</h3>
-                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <h3 class="project-title">Currency Exchanger v1</h3>
+                <p class="project-desc">
+                  Valuta konverter med litt fakta om hvert land
+                </p>
                 <div class="project-links">
-                  <a href="#"
+                  <a href="https://github.com/Xilarie1/Currency-Exchangerv1"
                     ><img src="Assets/githubwhite.svg" alt="github" />Repo</a
                   >
-                  <a href="#">Live</a>
+                  <a href="https://xilarie1.github.io/Currency-Exchangerv1/"
+                    >Live</a
+                  >
                 </div>
               </div>
             </div>
@@ -183,13 +194,13 @@
                 class="project-img"
               />
               <div class="project-content">
-                <h3 class="project-title">Project 2</h3>
-                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <h3 class="project-title">Celebrate</h3>
+                <p class="project-desc">Liten applikasjon med fyrverkeri</p>
                 <div class="project-links">
-                  <a href="#"
+                  <a href="https://github.com/Xilarie1/Celebrate"
                     ><img src="Assets/githubwhite.svg" alt="github" />Repo</a
                   >
-                  <a href="#">Live</a>
+                  <a href="https://xilarie1.github.io/Celebrate/">Live</a>
                 </div>
               </div>
             </div>
@@ -201,13 +212,17 @@
                 class="project-img"
               />
               <div class="project-content">
-                <h3 class="project-title">Project 3</h3>
-                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <h3 class="project-title">Book log</h3>
+                <p class="project-desc">
+                  Side for å lagre bøker du har lest, teller også antall sider
+                </p>
                 <div class="project-links">
-                  <a href="#"
+                  <a href="https://github.com/Xilarie1/Advanced-assignment-3"
                     ><img src="Assets/githubwhite.svg" alt="github" />Repo</a
                   >
-                  <a href="#">Live</a>
+                  <a href="https://xilarie1.github.io/Advanced-assignment-3/"
+                    >Live</a
+                  >
                 </div>
               </div>
             </div>
@@ -219,13 +234,15 @@
                 class="project-img"
               />
               <div class="project-content">
-                <h3 class="project-title">Project 4</h3>
-                <p class="project-desc">Kort beskrivelse av prosjektet.</p>
+                <h3 class="project-title">Craftsvilla</h3>
+                <p class="project-desc">
+                  Design av en booking side for kreative hobbyer
+                </p>
                 <div class="project-links">
-                  <a href="#"
+                  <a href="https://github.com/Xilarie1/Craftsvilla"
                     ><img src="Assets/githubwhite.svg" alt="github" />Repo</a
                   >
-                  <a href="#">Live</a>
+                  <a href="https://xilarie1.github.io/Craftsvilla/">Live</a>
                 </div>
               </div>
             </div>
@@ -233,7 +250,7 @@
         </section>
 
         <!-- Tools -->
-        <section class="tools" id="tools">
+        <section class="tools section" id="tools">
           <h2>Dev <span class="highlight">Verktøy</span></h2>
           <div class="tools-grid">
             <div class="tool">
@@ -287,12 +304,12 @@
         <!-- Contact -->
         <section id="contact" class="section">
           <h2>Kom i <span class="highlight">kontakt</span></h2>
-          <form>
-            <input type="text" placeholder="Navn" />
-            <input type="email" placeholder="E-post" />
-            <textarea placeholder="Din melding"></textarea>
-            <button type="submit">Send inn</button>
-          </form>
+
+          <div class="copy-field">mskrogh@gmail.com</div>
+          <div class="copy-field">+47 476 50 917</div>
+
+          <!-- Shared tooltip -->
+          <span id="tooltip" class="tooltip">Copied!</span>
         </section>
       </main>
     </div>
