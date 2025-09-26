@@ -41,9 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ======== EXTERNAL LINKS (all <a> tags) ========
-  const links = document.querySelectorAll("a, .project-links a");
-  links.forEach((link) => {
-    if (link.hostname !== window.location.hostname) {
+  document.querySelectorAll("a, .project-links a").forEach((link) => {
+    if (!link.getAttribute("href").startsWith("#")) {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
     }
