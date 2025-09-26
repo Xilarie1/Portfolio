@@ -413,6 +413,7 @@ section {
 }
 
 @media (max-width: 700px) {
+  /* Your existing grid adjustments */
   .tools-grid,
   .project-grid {
     grid-template-columns: 1fr;
@@ -423,5 +424,17 @@ section {
     width: 100%;
     max-width: 302.5px;
     margin: 0 auto;
+  }
+
+  /* Disable hover effects on mobile */
+  a:hover,
+  button:hover,
+  .nav-item:hover,
+  .copy-field:hover {
+    background: none;
+    color: inherit;
+    transform: none;
+    box-shadow: none;
+    cursor: default;
   }
 }
