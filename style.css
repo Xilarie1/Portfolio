@@ -27,14 +27,14 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-secondary);
+  font-family: var(--font-main);
   color: var(--color-offwhite);
   padding-bottom: 20px;
 }
 
 button,
 .secondary-button {
-  font-family: var(--font-mono);
+  font-family: var(--font-main);
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -56,6 +56,12 @@ header {
   min-height: 178px;
   background-color: var(--color-black);
   z-index: 900;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 85px;
 }
 
 /* === Navbar === */
@@ -104,6 +110,12 @@ header {
 
 .nav-item.active:hover {
   background: #00cc42; /* only background changes */
+}
+
+/* === Section Scroll Offset === */
+section {
+  scroll-margin-top: 178px;
+  margin-bottom: 80px;
 }
 
 /* === Layout === */
@@ -196,6 +208,10 @@ header {
   color: var(--color-green);
 }
 
+#about {
+  margin-bottom: 0px;
+}
+
 /* === Icon Bar === */
 #icon-bar {
   display: flex;
@@ -203,6 +219,8 @@ header {
   align-items: center;
   width: 247px;
   height: 68px;
+  margin-top: -80px;
+  margin-bottom: -80px;
 }
 
 .icon {
@@ -224,7 +242,7 @@ header {
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 2.375rem;
 }
 
 .tool,
@@ -267,7 +285,7 @@ header {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 2.375rem;
 }
 
 .project-card {
@@ -327,23 +345,35 @@ header {
 
 /* === Copy Field & Tooltip === */
 .copy-field {
-  display: inline-block;
-  padding: 10px 14px;
   background: var(--color-offblack);
-  border: 1px solid var(--color-grey);
-  border-radius: 6px;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   cursor: pointer;
-  margin: 6px 0;
-  font-family: var(--font-main);
-  font-size: 0.9rem;
   color: var(--color-offwhite);
-  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .copy-field:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   background: var(--color-grey);
   color: var(--color-black);
-  transform: translateY(-2px);
+}
+
+.copy-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.copy-field:hover .copy-icon {
+  opacity: 1;
 }
 
 .tooltip {
@@ -394,9 +424,4 @@ header {
     max-width: 302.5px;
     margin: 0 auto;
   }
-}
-
-/* === Section Scroll Offset === */
-section {
-  scroll-margin-top: 178px;
 }

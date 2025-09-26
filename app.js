@@ -12,16 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Highlight the first section immediately on load
+  updateActiveNav(sections[0].id);
+
+  // IntersectionObserver setup
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) updateActiveNav(entry.target.id);
       });
     },
-    { threshold: 0.6 }
+    { threshold: 0.5 } // lower threshold for better detection
   );
 
   sections.forEach((section) => observer.observe(section));
+
+  // Smooth scroll + immediate nav update on click
+  navItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault(); // stop default anchor jump
+      const sectionId = item.getAttribute("href").substring(1);
+      const section = document.getElementById(sectionId);
+
+      section.scrollIntoView({ behavior: "smooth" });
+
+      // Delay slightly to let scroll happen before updating nav
+      setTimeout(() => updateActiveNav(sectionId), 100);
+    });
+  });
 
   // ======== EXTERNAL LINKS ========
   const links = document.querySelectorAll("a");
@@ -47,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fields.forEach((field) => {
     field.addEventListener("click", () => {
-      const text = field.textContent.trim();
+      const text = field.querySelector("span").textContent.trim();
       navigator.clipboard.writeText(text).then(() => showTooltipAbove(field));
     });
   });
