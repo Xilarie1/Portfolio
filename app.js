@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ======== EXTERNAL LINKS (all <a> tags) ========
-  const links = document.querySelectorAll("a, .projec-links a");
+  const links = document.querySelectorAll("a, .project-links a");
   links.forEach((link) => {
     if (link.hostname !== window.location.hostname) {
       link.target = "_blank";
