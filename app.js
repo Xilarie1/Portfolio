@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) updateActiveNav(entry.target.id);
       });
     },
-    { threshold: 0.5 } // lower threshold for better detection
+    { threshold: 0.5 }
   );
 
   sections.forEach((section) => observer.observe(section));
@@ -30,18 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Smooth scroll + immediate nav update on click
   navItems.forEach((item) => {
     item.addEventListener("click", (e) => {
-      e.preventDefault(); // stop default anchor jump
+      e.preventDefault();
       const sectionId = item.getAttribute("href").substring(1);
       const section = document.getElementById(sectionId);
 
       section.scrollIntoView({ behavior: "smooth" });
 
-      // Delay slightly to let scroll happen before updating nav
       setTimeout(() => updateActiveNav(sectionId), 100);
     });
   });
 
-  // ======== EXTERNAL LINKS ========
+  // ======== EXTERNAL LINKS (all <a> tags) ========
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
     if (link.hostname !== window.location.hostname) {
@@ -69,4 +68,40 @@ document.addEventListener("DOMContentLoaded", () => {
       navigator.clipboard.writeText(text).then(() => showTooltipAbove(field));
     });
   });
+
+  // ======== PROFILE CARD BUTTONS ========
+  // GitHub button
+  const githubBtn = document.getElementById("github");
+  if (githubBtn) {
+    githubBtn.addEventListener("click", () => {
+      window.open(
+        "https://github.com/Xilarie1",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+  }
+
+  // LinkedIn button
+  const linkedinBtn = document.getElementById("linkedin");
+  if (linkedinBtn) {
+    linkedinBtn.addEventListener("click", () => {
+      window.open(
+        "https://www.linkedin.com/in/martin-krogh-a58360132/",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+  }
+
+  // Kontakt button
+  const kontaktBtn = document.getElementById("kontakt");
+  if (kontaktBtn) {
+    kontaktBtn.addEventListener("click", () => {
+      const kontaktSection = document.getElementById("contact");
+      if (kontaktSection) {
+        kontaktSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
 });
