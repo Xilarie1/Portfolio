@@ -346,8 +346,7 @@ section {
 /* === Copy Field & Tooltip === */
 .copy-field {
   background: var(--color-offblack);
-  max-width: calc(2 * 303px + 38px);
-  width: 100%;
+  width: 643px;
   margin: 0 auto 20px;
   border-radius: 8px;
   padding: 0.75rem 1rem;
@@ -436,5 +435,8 @@ section {
     transform: none;
     box-shadow: none;
     cursor: default;
+  }
+  .copy-field {
+    width: 90%;
   }
 }
